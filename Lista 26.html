@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de Programação</title>
+</head>
+
+<h1>Exercícios: Praticando a Lógica 5.5</h1>
+
+<h3>1. Mensagem de Boas-Vindas</h3>
+<button onclick="mostrarBoasVindas()">Executar</button>
+
+
+<h3>2. Saudação Personalizada</h3>
+<button onclick="saudarUsuario()">Executar</button>
+
+
+<h3>3. Dobro de um Número</h3>
+<button onclick="dobro()">Executar</button>
+
+
+<h3>4. Média de Três Números</h3>
+<button onclick="media()">Executar</button>
+
+
+<h3>5. Verificador de Par ou Ímpar</h3>
+<button onclick="paridade()">Executar</button>
+
+
+<h3>6. Maior de Dois Números</h3>
+<button onclick="maiorNumero()">Executar</button>
+
+
+<h3>7. Tabuada</h3>
+<button onclick="tabuada()">Executar</button>
+
+
+<h3>8. Contagem Regressiva</h3>
+<button onclick="regressiva()">Executar</button>
+
+
+<h3>9. Somar Vetor</h3>
+<button onclick="somarVetor()">Executar</button>
+
+
+<h3>10. Menor Valor do Vetor</h3>
+<button onclick="menorVetor()">Executar</button>
+
+
+<h3>11. Contar Pares no Vetor</h3>
+<button onclick="contarPares()">Executar</button>
+
+
+<h3>12. Situação do Aluno</h3>
+<button onclick="situacaoAluno()">Executar</button>
+
+
+<h3>13. Calculadora Simples</h3>
+<button onclick="calculadora()">Executar</button>
+
+
+<h3>14. Limpar Tela</h3>
+<button onclick="limparTela()">Executar</button>
+
+
+<h3>15. Calculadora com Menu</h3>
+<button onclick="menuCalculadora()">Executar</button>
+
+<script>
+
+    function mostrarBoasVindas() {
+        alert("Bem-vindo ao nosso programa!");
+    }
+
+    function saudarUsuario() {
+        let nome = prompt("Digite seu nome:");
+        alert("Olá, " + nome + "! Tenha um bom dia!");
+    }
+
+    function calcularDobro(num) {
+        return num * 2;
+    }
+
+    function dobro() {
+        let n = Number(prompt("Digite um número:"));
+        alert("Dobro = " + calcularDobro(n));
+    }
+
+    function calcularMedia(a, b, c) {
+        return (a + b + c) / 3;
+    }
+
+    function media() {
+        let n1 = Number(prompt("Nota 1:"));
+        let n2 = Number(prompt("Nota 2:"));
+        let n3 = Number(prompt("Nota 3:"));
+
+        alert("Média = " + calcularMedia(n1, n2, n3));
+    }
+
+    function verificarParidade(n) {
+        if (n % 2 == 0)
+            alert("Par");
+        else
+            alert("Ímpar");
+    }
+
+    function paridade() {
+        let n = Number(prompt("Digite um número:"));
+        verificarParidade(n);
+    }
+
+    function encontrarMaior(a, b) {
+        if (a > b)
+            return a;
+        else
+            return b;
+    }
+
+    function maiorNumero() {
+        let a = Number(prompt("Primeiro número:"));
+        let b = Number(prompt("Segundo número:"));
+
+        alert("Maior = " + encontrarMaior(a, b));
+    }
+
+    function mostrarTabuada(n) {
+        let resultado = "";
+
+        for (let i = 1; i <= 10; i++) {
+            resultado += n + " x " + i + " = " + (n * i) + "\n";
+        }
+
+        alert(resultado);
+    }
+
+    function tabuada() {
+        let n = Number(prompt("Digite um número:"));
+        mostrarTabuada(n);
+    }
+
+    function contagemRegressiva(n) {
+        let texto = "";
+
+        for (let i = n; i >= 0; i--) {
+            texto += i + "\n";
+        }
+
+        alert(texto);
+    }
+
+    function regressiva() {
+        let n = Number(prompt("Número inicial:"));
+        contagemRegressiva(n);
+    }
+
+    function somarVetor(v) {
+        let soma = 0;
+
+        for (let i = 0; i < v.length; i++) {
+            soma += v[i];
+        }
+
+        return soma;
+    }
+
+    function somarVetor() {
+        let vetor = [];
+
+        for (let i = 1; i <= 5; i++) {
+            vetor.push(Number(prompt("Digite o número " + i)));
+        }
+
+        alert("Soma = " + somarVetor(vetor));
+    }
+
+    function encontrarMenor(v) {
+        let menor = v[0];
+
+        for (let i = 1; i < v.length; i++) {
+            if (v[i] < menor)
+                menor = v[i];
+        }
+
+        return menor;
+    }
+
+    function menorVetor() {
+        let vetor = [];
+
+        for (let i = 1; i <= 5; i++) {
+            vetor.push(Number(prompt("Digite o número " + i)));
+        }
+
+        alert("Menor valor = " + encontrarMenor(vetor));
+    }
+
+    function contarPares(v) {
+        let cont = 0;
+
+        for (let i = 0; i < v.length; i++) {
+            if (v[i] % 2 == 0)
+                cont++;
+        }
+
+        return cont;
+    }
+
+    function contarPares() {
+        let vetor = [];
+
+        for (let i = 1; i <= 5; i++) {
+            vetor.push(Number(prompt("Digite o número " + i)));
+        }
+
+        alert("Quantidade de pares = " + contarPares(vetor));
+    }
+
+    function verificarAprovacao(media) {
+        if (media >= 6)
+            return "Aprovado";
+        else
+            return "Reprovado";
+    }
+
+    function situacaoAluno() {
+        let m = Number(prompt("Digite a média do aluno:"));
+        alert(verificarAprovacao(m));
+    }
+
+    function calculadora() {
+        let a = Number(prompt("Número 1"));
+        let b = Number(prompt("Número 2"));
+        let op = prompt("Operação (+ - * /)");
+
+        let resultado;
+
+        if (op == "+")
+            resultado = a + b;
+
+        if (op == "-")
+            resultado = a - b;
+
+        if (op == "*")
+            resultado = a * b;
+
+        if (op == "/")
+            resultado = a / b;
+
+        alert("Resultado = " + resultado);
+    }
+
+    function limparTela() {
+        let texto = "";
+
+        for (let i = 0; i < 50; i++) {
+            texto += "\n";
+        }
+
+        alert(texto);
+    }
+
+    function soma(a, b) { return a + b; }
+    function sub(a, b) { return a - b; }
+    function mult(a, b) { return a * b; }
+    function div(a, b) { return a / b; }
+
+    function menuCalculadora() {
+
+        let opcao;
+
+        do {
+
+            opcao = prompt(
+                "1 Soma\n" +
+                "2 Subtração\n" +
+                "3 Multiplicação\n" +
+                "4 Divisão\n" +
+                "0 Sair"
+            );
+
+            if (opcao != 0) {
+
+                let a = Number(prompt("Número 1"));
+                let b = Number(prompt("Número 2"));
+
+                if (opcao == 1) alert(soma(a, b));
+                if (opcao == 2) alert(sub(a, b));
+                if (opcao == 3) alert(mult(a, b));
+                if (opcao == 4) alert(div(a, b));
+
+            }
+
+        } while (opcao != 0);
+
+    }
+
+</script>
+
+</body>
+
+</html>

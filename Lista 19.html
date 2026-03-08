@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de Programação</title>
+</head>
+
+<h1>Exercícios: Praticando a Lógica 5.2</h1>
+
+<button onclick="ex16()">Exercício 16</button>
+<button onclick="ex17()">Exercício 17</button>
+<button onclick="ex18()">Exercício 18</button>
+<button onclick="ex19()">Exercício 19</button>
+<button onclick="ex20()">Exercício 20</button>
+<button onclick="ex21()">Exercício 21</button>
+<button onclick="ex22()">Exercício 22</button>
+<button onclick="ex23()">Exercício 23</button>
+<button onclick="ex24()">Exercício 24</button>
+<button onclick="ex25()">Exercício 25</button>
+<button onclick="ex26()">Exercício 26</button>
+<button onclick="ex27()">Exercício 27</button>
+<button onclick="ex28()">Exercício 28</button>
+<button onclick="ex29()">Exercício 29</button>
+<button onclick="ex30()">Exercício 30</button>
+
+<script>
+    function ex16() {
+
+        let preco = Number(prompt("Digite o preço do produto"));
+        let desconto = Number(prompt("Digite a porcentagem de desconto"));
+
+        let valorDesconto = preco * (desconto / 100);
+        let precoFinal = preco - valorDesconto;
+
+        alert("Valor do desconto: R$ " + valorDesconto + "\nPreço final: R$ " + precoFinal);
+
+    }
+
+
+
+    function ex17() {
+
+        let c = Number(prompt("Digite a temperatura em Celsius"));
+
+        let f = c * 1.8 + 32;
+
+        alert("A temperatura em Fahrenheit é: " + f + "°F");
+
+    }
+
+
+
+    function ex18() {
+
+        let dias = Number(prompt("Quantos dias alugados?"));
+        let km = Number(prompt("Quantos Km rodados?"));
+
+        let preco = (dias * 60) + (km * 0.15);
+
+        alert("O preço total a pagar é: R$ " + preco);
+
+    }
+
+
+
+    function ex19() {
+
+        let idade = Number(prompt("Digite a idade"));
+
+        if (idade < 16) {
+            alert("Situação: Não votante");
+        }
+        else if (idade <= 17) {
+            alert("Situação: Voto opcional");
+        }
+        else if (idade <= 70) {
+            alert("Situação: Voto obrigatório");
+        }
+        else {
+            alert("Situação: Voto opcional");
+        }
+
+    }
+
+
+
+    function ex20() {
+
+        let peso = Number(prompt("Digite o peso"));
+        let altura = Number(prompt("Digite a altura"));
+
+        let imc = peso / (altura * altura);
+
+        let classificacao = "";
+
+        if (imc < 18.5) {
+            classificacao = "Abaixo do peso";
+        }
+        else if (imc < 25) {
+            classificacao = "Peso normal";
+        }
+        else if (imc < 30) {
+            classificacao = "Sobrepeso";
+        }
+        else {
+            classificacao = "Obesidade";
+        }
+
+        alert("Seu IMC é: " + imc + "\nClassificação: " + classificacao);
+
+    }
+
+
+
+    function ex21() {
+
+        let preco = Number(prompt("Digite o preço do produto"));
+        let opcao = Number(prompt("Forma de pagamento:\n1 - À vista\n2 - 2x cartão\n3 - 3x ou mais"));
+
+        let valorFinal;
+
+        if (opcao == 1) {
+            valorFinal = preco * 0.9;
+        }
+        else if (opcao == 2) {
+            valorFinal = preco;
+        }
+        else {
+            valorFinal = preco * 1.2;
+        }
+
+        alert("Valor final: R$ " + valorFinal);
+
+    }
+
+
+
+    function ex22() {
+
+        let a = Number(prompt("Digite o primeiro lado"));
+        let b = Number(prompt("Digite o segundo lado"));
+        let c = Number(prompt("Digite o terceiro lado"));
+
+        if (a + b > c && a + c > b && b + c > a) {
+            alert("As retas PODEM formar um triângulo");
+        } else {
+            alert("As retas NÃO podem formar um triângulo");
+        }
+
+    }
+
+
+
+    function ex23() {
+
+        let n1 = Number(prompt("Digite o primeiro número"));
+        let n2 = Number(prompt("Digite o segundo número"));
+        let n3 = Number(prompt("Digite o terceiro número"));
+
+        let maior = n1;
+
+        if (n2 > maior) {
+            maior = n2;
+        }
+
+        if (n3 > maior) {
+            maior = n3;
+        }
+
+        alert("O maior número é: " + maior);
+
+    }
+
+
+
+    function ex24() {
+
+        let n1 = Number(prompt("Digite o primeiro número"));
+        let n2 = Number(prompt("Digite o segundo número"));
+
+        if (n1 < n2) {
+            alert("Ordem crescente: " + n1 + ", " + n2);
+        } else {
+            alert("Ordem crescente: " + n2 + ", " + n1);
+        }
+
+    }
+
+
+
+    function ex25() {
+
+        let ano = Number(prompt("Digite um ano"));
+
+        if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
+            alert("O ano " + ano + " é bissexto");
+        } else {
+            alert("O ano " + ano + " NÃO é bissexto");
+        }
+
+    }
+
+
+
+    function ex26() {
+
+        let nascimento = Number(prompt("Digite o ano de nascimento"));
+
+        let idade = 2025 - nascimento;
+
+        if (idade < 18) {
+
+            let falta = 18 - idade;
+
+            alert("Você tem " + idade + " anos em 2025.\nAinda vai se alistar. Faltam " + falta + " anos.");
+
+        }
+        else if (idade == 18) {
+
+            alert("Você tem " + idade + " anos em 2025.\nÉ hora de se alistar.");
+
+        }
+        else {
+
+            let passou = idade - 18;
+
+            alert("Você tem " + idade + " anos em 2025.\nJá passou do tempo de alistamento há " + passou + " anos.");
+
+        }
+
+    }
+
+
+
+    function ex27() {
+
+        let n1 = Number(prompt("Digite a primeira nota"));
+        let n2 = Number(prompt("Digite a segunda nota"));
+
+        let media = (n1 + n2) / 2;
+
+        let status;
+
+        if (media < 5) {
+            status = "REPROVADO";
+        }
+        else if (media < 7) {
+            status = "RECUPERAÇÃO";
+        }
+        else {
+            status = "APROVADO";
+        }
+
+        alert("Sua média é: " + media + "\nStatus: " + status);
+
+    }
+
+
+
+    function ex28() {
+
+        let j1 = Number(prompt("Jogador 1\n1-Pedra\n2-Papel\n3-Tesoura"));
+        let j2 = Number(prompt("Jogador 2\n1-Pedra\n2-Papel\n3-Tesoura"));
+
+        if (j1 == j2) {
+            alert("Empate");
+        }
+        else if (
+            (j1 == 1 && j2 == 3) ||
+            (j1 == 2 && j2 == 1) ||
+            (j1 == 3 && j2 == 2)
+        ) {
+            alert("Jogador 1 VENCEU!");
+        }
+        else {
+            alert("Jogador 2 VENCEU!");
+        }
+
+    }
+
+
+
+    function ex29() {
+
+        let distancia = Number(prompt("Digite a distância em Km"));
+
+        let preco;
+
+        if (distancia <= 200) {
+            preco = distancia * 0.50;
+        } else {
+            preco = distancia * 0.45;
+        }
+
+        alert("O preço da passagem é: R$ " + preco);
+
+    }
+
+
+
+    function ex30() {
+
+        let casa = Number(prompt("Valor da casa"));
+        let salario = Number(prompt("Salário do comprador"));
+        let anos = Number(prompt("Em quantos anos vai pagar"));
+
+        let meses = anos * 12;
+
+        let prestacao = casa / meses;
+
+        alert("A prestação mensal será de: R$ " + prestacao);
+
+        if (prestacao <= salario * 0.3) {
+            alert("Empréstimo APROVADO!");
+        } else {
+            alert("Empréstimo NEGADO!");
+        }
+
+    }
+</script>
+</body>
+
+</html>

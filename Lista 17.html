@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de Programação</title>
+</head>
+
+<body>
+
+    <h1>Exercícios: Praticando a Lógica 5.1</h1>
+
+    <button onclick="ex1()">Exercício 1</button>
+    <button onclick="ex2()">Exercício 2</button>
+    <button onclick="ex3()">Exercício 3</button>
+    <button onclick="ex4()">Exercício 4</button>
+    <button onclick="ex5()">Exercício 5</button>
+    <button onclick="ex6()">Exercício 6</button>
+    <button onclick="ex7()">Exercício 7</button>
+    <button onclick="ex8()">Exercício 8</button>
+    <button onclick="ex9()">Exercício 9</button>
+    <button onclick="ex10()">Exercício 10</button>
+    <button onclick="ex11()">Exercício 11</button>
+    <button onclick="ex12()">Exercício 12</button>
+    <button onclick="ex13()">Exercício 13</button>
+    <button onclick="ex14()">Exercício 14</button>
+    <button onclick="ex15()">Exercício 15</button>
+
+    <script>
+
+        function ex1() {
+            console.log("Olá, Mundo!");
+        }
+
+
+        function ex2() {
+
+            let nome = prompt("Digite seu nome");
+            let sobrenome = prompt("Digite seu sobrenome");
+
+            alert("Nome completo: " + nome + " " + sobrenome);
+
+        }
+
+
+
+        function ex3() {
+
+            let num1 = Number(prompt("Digite o primeiro número"));
+            let num2 = Number(prompt("Digite o segundo número"));
+
+            let soma = num1 + num2;
+
+            alert("Soma: " + soma);
+
+        }
+
+
+
+        function ex4() {
+
+            let nota1 = Number(prompt("Digite a primeira nota"));
+            let nota2 = Number(prompt("Digite a segunda nota"));
+            let nota3 = Number(prompt("Digite a terceira nota"));
+
+            let media = (nota1 + nota2 + nota3) / 3;
+
+            alert("Média: " + media);
+
+        }
+
+
+
+        function ex5() {
+
+            let numero = Number(prompt("Digite um número"));
+
+            let antecessor = numero - 1;
+            let sucessor = numero + 1;
+
+            alert("Antecessor: " + antecessor + " | Sucessor: " + sucessor);
+
+        }
+
+
+
+        function ex6() {
+
+            let salario = Number(prompt("Digite o salário"));
+
+            let novoSalario = salario * 1.15;
+
+            alert("Novo salário: " + novoSalario);
+
+        }
+
+
+
+        function ex7() {
+
+            let reais = Number(prompt("Digite o valor em reais"));
+
+            let dolares = reais / 5;
+
+            alert("Valor em dólares: " + dolares);
+
+        }
+
+
+
+        function ex8() {
+
+            let numero = Number(prompt("Digite um número"));
+
+            if (numero % 2 == 0) {
+                alert("O número é PAR");
+            } else {
+                alert("O número é ÍMPAR");
+            }
+
+        }
+
+
+
+        function ex9() {
+
+            let idade = Number(prompt("Digite sua idade"));
+
+            if (idade >= 18) {
+                alert("Maior de idade");
+            } else {
+                alert("Menor de idade");
+            }
+
+        }
+
+
+
+        function ex10() {
+
+            let num1 = Number(prompt("Digite o primeiro número"));
+            let num2 = Number(prompt("Digite o segundo número"));
+
+            if (num1 > num2) {
+                alert("O maior número é: " + num1);
+            } else {
+                alert("O maior número é: " + num2);
+            }
+
+        }
+
+
+
+        function ex11() {
+
+            let nota1 = Number(prompt("Digite a primeira nota"));
+            let nota2 = Number(prompt("Digite a segunda nota"));
+
+            let media = (nota1 + nota2) / 2;
+
+            if (media >= 7) {
+                alert("Aprovado");
+            } else {
+                alert("Reprovado");
+            }
+
+        }
+
+
+
+        function ex12() {
+
+            let numero = Number(prompt("Digite um número"));
+
+            if (numero > 0) {
+                alert("Número positivo");
+            } else if (numero < 0) {
+                alert("Número negativo");
+            } else {
+                alert("O número é zero");
+            }
+
+        }
+
+
+
+        function ex13() {
+
+            let idade = Number(prompt("Digite a idade do nadador"));
+
+            if (idade >= 5 && idade <= 7) {
+                alert("Categoria: Infantil A");
+            }
+            else if (idade >= 8 && idade <= 11) {
+                alert("Categoria: Infantil B");
+            }
+            else if (idade >= 12 && idade <= 13) {
+                alert("Categoria: Juvenil A");
+            }
+            else if (idade >= 14 && idade <= 17) {
+                alert("Categoria: Juvenil B");
+            }
+            else if (idade >= 18) {
+                alert("Categoria: Adulto");
+            }
+            else {
+                alert("Idade fora das categorias");
+            }
+
+        }
+
+
+
+        function ex14() {
+
+            let usuario = prompt("Digite o usuário");
+            let senha = prompt("Digite a senha");
+
+            if (usuario == "admin" && senha == "1234") {
+                alert("Login efetuado com sucesso");
+            } else {
+                alert("Falha na autenticação");
+            }
+
+        }
+
+
+
+        function ex15() {
+
+            let peso = Number(prompt("Digite seu peso em kg"));
+            let altura = Number(prompt("Digite sua altura em metros"));
+
+            let imc = peso / (altura * altura);
+
+            alert("Seu IMC é: " + imc);
+
+        }
+
+    </script>
+</body>
+
+</html>

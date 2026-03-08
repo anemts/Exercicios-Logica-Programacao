@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de Programação</title>
+</head>
+
+<body>
+
+    <h1>Exercícios Arrays e Objetos</h1>
+
+    <button onclick="ex31()">Lista de Compras</button>
+    <button onclick="ex32()">Cadastro de Contato</button>
+    <button onclick="ex33()">Filtrar Adultos</button>
+    <button onclick="ex34()">Calculadora de Preço</button>
+    <button onclick="ex35()">Inventário</button>
+    <button onclick="ex36()">Buscar Usuário</button>
+    <button onclick="ex37()">Marcar Tarefas</button>
+    <button onclick="ex38()">Contagem por Categoria</button>
+    <button onclick="ex39()">Ranking</button>
+    <button onclick="ex40()">Carrinho</button>
+
+    <script>
+
+        function ex31() {
+
+            let lista = [];
+
+            for (let i = 0; i < 5; i++) {
+                lista[i] = prompt("Digite o item " + (i + 1));
+            }
+
+            alert("Lista: " + lista);
+            alert("Total de itens: " + lista.length);
+
+            let remover = prompt("Digite um item para remover");
+
+            let pos = -1;
+
+            for (let i = 0; i < lista.length; i++) {
+                if (lista[i] == remover) {
+                    pos = i;
+                }
+            }
+
+            if (pos != -1) {
+                lista.splice(pos, 1);
+                alert("Lista atualizada: " + lista);
+            } else {
+                alert("Item não encontrado");
+            }
+
+        }
+
+
+
+        function ex32() {
+
+            let contato = {
+                nome: prompt("Nome"),
+                telefone: prompt("Telefone"),
+                email: prompt("Email")
+            };
+
+            alert("Contato: " + contato.nome + " - " + contato.telefone + " - " + contato.email);
+
+            let opcao = prompt("Deseja atualizar telefone ou email?");
+
+            if (opcao == "telefone") {
+                contato.telefone = prompt("Novo telefone");
+            }
+
+            if (opcao == "email") {
+                contato.email = prompt("Novo email");
+            }
+
+            alert("Contato atualizado: " + contato.nome + " - " + contato.telefone + " - " + contato.email);
+
+            let limpar = prompt("Deseja limpar cadastro? (sim/não)");
+
+            if (limpar == "sim") {
+                contato.nome = "";
+                contato.telefone = "";
+                contato.email = "";
+            }
+
+            console.log(contato);
+
+        }
+
+
+
+        function ex33() {
+
+            let idades = [];
+            let maiores = [];
+            let menores = 0;
+
+            for (let i = 0; i < 5; i++) {
+                idades[i] = Number(prompt("Digite a idade " + (i + 1)));
+            }
+
+            for (let i = 0; i < idades.length; i++) {
+
+                if (idades[i] >= 18) {
+                    maiores.push(idades[i]);
+                } else {
+                    menores++;
+                }
+
+            }
+
+            alert("Idades: " + idades);
+            alert("Maiores de idade: " + maiores);
+            alert("Total maiores: " + maiores.length);
+            alert("Total menores: " + menores);
+
+        }
+
+
+
+        function ex34() {
+
+            let precos = [];
+            let soma = 0;
+
+            for (let i = 0; i < 4; i++) {
+                precos[i] = Number(prompt("Digite o preço " + (i + 1)));
+                soma += precos[i];
+            }
+
+            let media = soma / precos.length;
+
+            alert("Total: " + soma);
+            alert("Média: " + media);
+
+            let maior = precos[0];
+
+            for (let i = 1; i < precos.length; i++) {
+                if (precos[i] > maior) {
+                    maior = precos[i];
+                }
+            }
+
+            let pos = precos.indexOf(maior);
+
+            precos.splice(pos, 1);
+
+            let novaSoma = 0;
+
+            for (let i = 0; i < precos.length; i++) {
+                novaSoma += precos[i];
+            }
+
+            let novaMedia = novaSoma / precos.length;
+
+            alert("Nova média sem o maior preço: " + novaMedia);
+
+        }
+
+
+
+        function ex35() {
+
+            let produto = {
+                nome: prompt("Nome do produto"),
+                quantidade: Number(prompt("Quantidade"))
+            };
+
+            if (produto.quantidade > 0) {
+                alert("Em estoque");
+            } else {
+                alert("Fora de estoque");
+            }
+
+            let opcao = prompt("Digite repor ou retirar");
+
+            let valor = Number(prompt("Quantidade"));
+
+            if (opcao == "repor") {
+                produto.quantidade += valor;
+            }
+
+            if (opcao == "retirar") {
+                produto.quantidade -= valor;
+            }
+
+            alert("Quantidade atual: " + produto.quantidade);
+
+        }
+
+
+
+        function ex36() {
+
+            let usuarios = [
+                { nome: "Ana", email: "ana@email.com" },
+                { nome: "Bruno", email: "bruno@email.com" },
+                { nome: "Carlos", email: "carlos@email.com" }
+            ];
+
+            let busca = prompt("Digite o email");
+
+            let pos = -1;
+
+            for (let i = 0; i < usuarios.length; i++) {
+                if (usuarios[i].email == busca) {
+                    pos = i;
+                }
+            }
+
+            if (pos != -1) {
+
+                alert("Usuário encontrado: " + usuarios[pos].nome);
+
+                let remover = prompt("Deseja remover? (sim/não)");
+
+                if (remover == "sim") {
+                    usuarios.splice(pos, 1);
+                }
+
+            } else {
+                alert("Não encontrado");
+            }
+
+            console.log(usuarios);
+
+        }
+
+
+
+        function ex37() {
+
+            let tarefas = [];
+
+            for (let i = 0; i < 3; i++) {
+
+                let texto = prompt("Digite a tarefa");
+
+                tarefas.push({
+                    texto: texto,
+                    feita: false
+                });
+
+            }
+
+            console.log(tarefas);
+
+            let indice = Number(prompt("Qual tarefa deseja marcar como feita? (0,1,2)"));
+
+            tarefas[indice].feita = true;
+
+            let remover = Number(prompt("Qual tarefa deseja remover?"));
+
+            tarefas.splice(remover, 1);
+
+            let concluidas = 0;
+
+            for (let i = 0; i < tarefas.length; i++) {
+
+                if (tarefas[i].feita) {
+                    concluidas++;
+                }
+
+            }
+
+            console.log(tarefas);
+            alert("Tarefas concluídas: " + concluidas);
+
+        }
+
+
+
+        function ex38() {
+
+            let itens = [];
+
+            for (let i = 0; i < 6; i++) {
+
+                let nome = prompt("Nome do item");
+                let categoria = prompt("Categoria");
+
+                itens.push({
+                    nome: nome,
+                    categoria: categoria
+                });
+
+            }
+
+            let contagem = {};
+
+            for (let i = 0; i < itens.length; i++) {
+
+                let cat = itens[i].categoria;
+
+                if (contagem[cat]) {
+                    contagem[cat]++;
+                } else {
+                    contagem[cat] = 1;
+                }
+
+            }
+
+            console.log(contagem);
+
+            let remover = prompt("Qual categoria remover?");
+
+            let novos = [];
+
+            for (let i = 0; i < itens.length; i++) {
+
+                if (itens[i].categoria != remover) {
+                    novos.push(itens[i]);
+                }
+
+            }
+
+            itens = novos;
+
+            console.log(itens);
+
+        }
+
+
+
+        function ex39() {
+
+            let ranking = [];
+
+            for (let i = 0; i < 4; i++) {
+
+                let nome = prompt("Nome");
+                let pontos = Number(prompt("Pontos"));
+
+                ranking.push({
+                    nome: nome,
+                    pontos: pontos
+                });
+
+            }
+
+            let maior = ranking[0];
+
+            for (let i = 1; i < ranking.length; i++) {
+
+                if (ranking[i].pontos > maior.pontos) {
+                    maior = ranking[i];
+                }
+
+            }
+
+            alert("Maior pontuador: " + maior.nome + " - " + maior.pontos);
+
+            let atualizar = prompt("Deseja atualizar pontuação? (sim/não)");
+
+            if (atualizar == "sim") {
+
+                let nome = prompt("Nome do jogador");
+
+                for (let i = 0; i < ranking.length; i++) {
+
+                    if (ranking[i].nome == nome) {
+                        ranking[i].pontos = Number(prompt("Nova pontuação"));
+                    }
+
+                }
+
+            }
+
+            console.log(ranking);
+
+        }
+
+
+
+        function ex40() {
+
+            let carrinho = [];
+
+            for (let i = 0; i < 5; i++) {
+
+                let nome = prompt("Nome do produto");
+
+                if (nome == "") {
+                    break;
+                }
+
+                let preco = Number(prompt("Preço"));
+
+                carrinho.push({
+                    nome: nome,
+                    preco: preco
+                });
+
+            }
+
+            let total = 0;
+
+            for (let i = 0; i < carrinho.length; i++) {
+                total += carrinho[i].preco;
+            }
+
+            let frete = 10;
+
+            if (total > 100) {
+                frete = 0;
+            }
+
+            alert("Total: " + total + " Frete: " + frete);
+
+            let remover = prompt("Produto para remover");
+
+            for (let i = 0; i < carrinho.length; i++) {
+
+                if (carrinho[i].nome == remover) {
+                    carrinho.splice(i, 1);
+                    break;
+                }
+
+            }
+
+            total = 0;
+
+            for (let i = 0; i < carrinho.length; i++) {
+                total += carrinho[i].preco;
+            }
+
+            if (total > 100) {
+                frete = 0;
+            } else {
+                frete = 10;
+            }
+
+            alert("Novo total: " + total + " Frete: " + frete);
+
+        }
+
+    </script>
+</body>
+
+</html>

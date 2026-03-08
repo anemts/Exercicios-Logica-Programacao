@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logica de Programação</title>
+</head>
+
+<body>
+
+    <h1>Exercícios: Praticando a Lógica 5.3</h1>
+
+    <button onclick="ex1()">Exercício 1</button>
+    <button onclick="ex2()">Exercício 2</button>
+    <button onclick="ex3()">Exercício 3</button>
+    <button onclick="ex4()">Exercício 4</button>
+    <button onclick="ex5()">Exercício 5</button>
+    <button onclick="ex6()">Exercício 6</button>
+    <button onclick="ex7()">Exercício 7</button>
+    <button onclick="ex8()">Exercício 8</button>
+    <button onclick="ex9()">Exercício 9</button>
+    <button onclick="ex10()">Exercício 10</button>
+
+    <script>
+
+        function ex1() {
+
+            let vetor = [];
+
+            for (let i = 0; i < 5; i++) {
+                vetor[i] = Number(prompt("Digite o número " + (i + 1)));
+            }
+
+            alert("Números digitados: " + vetor);
+
+        }
+
+
+
+        function ex2() {
+
+            let vetor = [];
+            let soma = 0;
+
+            for (let i = 0; i < 6; i++) {
+                vetor[i] = Number(prompt("Digite o número " + (i + 1)));
+                soma += vetor[i];
+            }
+
+            alert("Soma dos elementos: " + soma);
+
+        }
+
+
+
+        function ex3() {
+
+            let vetor = [];
+            let pares = "";
+
+            for (let i = 0; i < 8; i++) {
+                vetor[i] = Number(prompt("Digite o número " + (i + 1)));
+            }
+
+            for (let i = 0; i < 8; i++) {
+                if (vetor[i] % 2 == 0) {
+                    pares += vetor[i] + " ";
+                }
+            }
+
+            alert("Números pares: " + pares);
+
+        }
+
+
+
+        function ex4() {
+
+            let vetor = [];
+
+            for (let i = 0; i < 7; i++) {
+                vetor[i] = Number(prompt("Digite o número " + (i + 1)));
+            }
+
+            let maior = vetor[0];
+
+            for (let i = 1; i < 7; i++) {
+                if (vetor[i] > maior) {
+                    maior = vetor[i];
+                }
+            }
+
+            alert("Maior número: " + maior);
+
+        }
+
+
+
+        function ex5() {
+
+            let notas = [];
+            let soma = 0;
+
+            for (let i = 0; i < 5; i++) {
+                notas[i] = Number(prompt("Digite a nota do aluno " + (i + 1)));
+                soma += notas[i];
+            }
+
+            let media = soma / 5;
+
+            alert("Média da turma: " + media);
+
+        }
+
+
+
+        function ex6() {
+
+            let vetor = [];
+            let impares = 0;
+
+            for (let i = 0; i < 10; i++) {
+                vetor[i] = Number(prompt("Digite o número " + (i + 1)));
+            }
+
+            for (let i = 0; i < 10; i++) {
+                if (vetor[i] % 2 != 0) {
+                    impares++;
+                }
+            }
+
+            alert("Quantidade de números ímpares: " + impares);
+
+        }
+
+
+
+        function ex7() {
+
+            let vetor = [];
+
+            for (let i = 0; i < 10; i++) {
+                vetor[i] = Number(prompt("Digite o número " + (i + 1)));
+            }
+
+            let busca = Number(prompt("Digite o número que deseja buscar"));
+            let encontrado = false;
+
+            for (let i = 0; i < 10; i++) {
+                if (vetor[i] == busca) {
+                    encontrado = true;
+                }
+            }
+
+            if (encontrado) {
+                alert("Número encontrado");
+            } else {
+                alert("Número não encontrado");
+            }
+
+        }
+
+
+
+        function ex8() {
+
+            let nomes = [];
+            let nomesA = "";
+
+            for (let i = 0; i < 5; i++) {
+                nomes[i] = prompt("Digite o nome " + (i + 1));
+            }
+
+            for (let i = 0; i < 5; i++) {
+                if (nomes[i].charAt(0).toUpperCase() == "A") {
+                    nomesA += nomes[i] + " ";
+                }
+            }
+
+            alert("Nomes que começam com A: " + nomesA);
+
+        }
+
+
+
+        function ex9() {
+
+            let vetor = [];
+            let invertido = "";
+
+            for (let i = 0; i < 6; i++) {
+                vetor[i] = Number(prompt("Digite o número " + (i + 1)));
+            }
+
+            for (let i = 5; i >= 0; i--) {
+                invertido += vetor[i] + " ";
+            }
+
+            alert("Vetor invertido: " + invertido);
+
+        }
+
+
+
+        function ex10() {
+
+            let notas = [];
+            let aprovados = 0;
+
+            for (let i = 0; i < 8; i++) {
+
+                notas[i] = Number(prompt("Digite a nota do aluno " + (i + 1)));
+
+                if (notas[i] >= 7) {
+                    aprovados++;
+                }
+
+            }
+
+            alert("Quantidade de alunos aprovados: " + aprovados);
+
+        }
+
+
+    </script>
+</body>
+
+</html>
